@@ -71,4 +71,7 @@ swiftmailer:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
-    user_class: FOS\UserBundle\Model\User
+    user_class: KarateBundle\Entity\User
+    registration:
+            form:
+                type: KarateBundle\Form\RegistrationType
