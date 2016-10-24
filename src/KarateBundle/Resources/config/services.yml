@@ -1,0 +1,4 @@
+services:
+#    karate.example:
+#        class: KarateBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
