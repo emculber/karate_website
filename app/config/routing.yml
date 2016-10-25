@@ -5,3 +5,10 @@ karate:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: classes
+        permanent: true

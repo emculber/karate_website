@@ -1,6 +1,25 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+<style>
+    .fos_user_profile{
+        max-width:350px;
+        margin: 0 auto;
+    }
+    .profile-heading {
+        text-align: center;
+    }
+</style>
+
+<div class="fos_user_profile">
+    <h3 class="profile-heading">Profile</h3>
+    <p>Username: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>First Name: {{ user.fname }}</p>
+    <p>Last Name: {{ user.lname }}</p>
+    <p>Address: {{ user.address }}</p>
+    <p>Phone Number: {{ user.phoneNumber }}</p>
+    <p>Date of Birth: {{ user.dateOfBirth.date|date("m/d/Y") }}</p>
+    <p>Belt: {{ user.belt.belttitle }} - {{ user.belt.beltdescription }}</p>
+
+    <a href="{{ path("fos_user_profile_edit") }}" class="btn btn-lg btn-success btn-block">Edit Profile</a>
 </div>

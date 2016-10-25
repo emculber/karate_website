@@ -1,0 +1,36 @@
+<?php
+
+namespace KarateBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Level
+ *
+ * @ORM\Table(name="level")
+ * @ORM\Entity
+ */
+class Level
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="level", type="string", length=50, nullable=true)
+     */
+    private $level;
+
+    /**
+     * @var \Belt
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Belt")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="belt_id", referencedColumnName="belt_id")
+     * })
+     */
+    private $belt;
+
+
+}
+

@@ -75,3 +75,7 @@ fos_user:
     registration:
             form:
                 type: KarateBundle\Form\RegistrationType
+
+    profile:
+            form:
+                type: KarateBundle\Form\ProfileEditType

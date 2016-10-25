@@ -1,0 +1,51 @@
+<?php
+
+namespace KarateBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Instructor
+ *
+ * @ORM\Table(name="instructor", indexes={@ORM\Index(name="IDX_31FC43DDF8E3ADFE", columns={"belt_id"})})
+ * @ORM\Entity
+ */
+class Instructor
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="instructor_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\SequenceGenerator(sequenceName="instructor_instructor_id_seq", allocationSize=1, initialValue=1)
+     */
+    private $instructorId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fname", type="string", length=30, nullable=true)
+     */
+    private $fname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lname", type="string", length=30, nullable=true)
+     */
+    private $lname;
+
+    /**
+     * @var \Belt
+     *
+     * @ORM\ManyToOne(targetEntity="Belt")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="belt_id", referencedColumnName="belt_id")
+     * })
+     */
+    private $belt;
+
+
+}
+
