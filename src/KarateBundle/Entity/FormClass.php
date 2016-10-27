@@ -44,9 +44,9 @@ class FormClass
     private $classType;
 
     /**
-     * @var \Level
+     * @var \Belt
      *
-     * @ORM\ManyToOne(targetEntity="Level")
+     * @ORM\ManyToOne(targetEntity="Belt")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="belt_id", referencedColumnName="belt_id")
      * })
@@ -140,11 +140,11 @@ class FormClass
     /**
      * Set belt
      *
-     * @param \KarateBundle\Entity\Level $belt
+     * @param \KarateBundle\Entity\Belt $belt
      *
      * @return FormClass
      */
-    public function setBelt(\KarateBundle\Entity\Level $belt = null)
+    public function setBelt(\KarateBundle\Entity\Belt $belt = null)
     {
         $this->belt = $belt;
 
@@ -154,7 +154,7 @@ class FormClass
     /**
      * Get belt
      *
-     * @return \KarateBundle\Entity\Level
+     * @return \KarateBundle\Entity\Belt
      */
     public function getBelt()
     {

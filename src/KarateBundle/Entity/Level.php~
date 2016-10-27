@@ -13,23 +13,21 @@ use Doctrine\ORM\Mapping as ORM;
 class Level
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="level_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\SequenceGenerator(sequenceName="level_level_id_seq", allocationSize=1, initialValue=1)
+     */
+    private $levelId;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="level", type="string", length=50, nullable=true)
      */
     private $level;
-
-    /**
-     * @var \Belt
-     *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Belt")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="belt_id", referencedColumnName="belt_id")
-     * })
-     */
-    private $belt;
 
 
 }

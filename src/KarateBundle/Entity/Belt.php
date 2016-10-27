@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Belt
  *
- * @ORM\Table(name="belt")
+ * @ORM\Table(name="belt", indexes={@ORM\Index(name="IDX_605778D15FB14BA7", columns={"level_id"})})
  * @ORM\Entity
  */
 class Belt
@@ -35,6 +35,16 @@ class Belt
      * @ORM\Column(name="belt_description", type="string", length=255, nullable=true)
      */
     private $beltDescription;
+
+    /**
+     * @var \Level
+     *
+     * @ORM\ManyToOne(targetEntity="Level")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="level_id", referencedColumnName="level_id")
+     * })
+     */
+    private $level;
 
 
 
@@ -97,12 +107,26 @@ class Belt
     }
 
     /**
-     * Get full
+     * Set level
      *
-     * @return string
+     * @param \KarateBundle\Entity\Level $level
+     *
+     * @return Belt
      */
-    public function getFullBelt()
+    public function setLevel(\KarateBundle\Entity\Level $level = null)
     {
-        return $this->beltTitle . " - " . $this->beltDescription;
+        $this->level = $level;
+
+        return $this;
+    }
+
+    /**
+     * Get level
+     *
+     * @return \KarateBundle\Entity\Level
+     */
+    public function getLevel()
+    {
+        return $this->level;
     }
 }

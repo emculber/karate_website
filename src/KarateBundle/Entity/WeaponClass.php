@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * WeaponClass
  *
- * @ORM\Table(name="weapon_class", indexes={@ORM\Index(name="IDX_C0F1E9FA2EE82581F88B4253", columns={"weapons_id", "age_group"})})
+ * @ORM\Table(name="weapon_class")
  * @ORM\Entity
  */
 class WeaponClass
@@ -44,15 +44,18 @@ class WeaponClass
     private $classType;
 
     /**
-     * @var \Weapons
+     * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="Weapons")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="weapons_id", referencedColumnName="weaponds_id"),
-     *   @ORM\JoinColumn(name="age_group", referencedColumnName="age_group")
-     * })
+     * @ORM\Column(name="age_group", type="integer", nullable=true)
      */
-    private $weapons;
+    private $ageGroup;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="weapon_description", type="string", length=255, nullable=true)
+     */
+    private $weaponDescription;
 
 
 
@@ -139,26 +142,50 @@ class WeaponClass
     }
 
     /**
-     * Set weapons
+     * Set ageGroup
      *
-     * @param \KarateBundle\Entity\Weapons $weapons
+     * @param integer $ageGroup
      *
      * @return WeaponClass
      */
-    public function setWeapons(\KarateBundle\Entity\Weapons $weapons = null)
+    public function setAgeGroup($ageGroup)
     {
-        $this->weapons = $weapons;
+        $this->ageGroup = $ageGroup;
 
         return $this;
     }
 
     /**
-     * Get weapons
+     * Get ageGroup
      *
-     * @return \KarateBundle\Entity\Weapons
+     * @return integer
      */
-    public function getWeapons()
+    public function getAgeGroup()
     {
-        return $this->weapons;
+        return $this->ageGroup;
+    }
+
+    /**
+     * Set weaponDescription
+     *
+     * @param string $weaponDescription
+     *
+     * @return WeaponClass
+     */
+    public function setWeaponDescription($weaponDescription)
+    {
+        $this->weaponDescription = $weaponDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get weaponDescription
+     *
+     * @return string
+     */
+    public function getWeaponDescription()
+    {
+        return $this->weaponDescription;
     }
 }

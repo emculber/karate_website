@@ -44,9 +44,9 @@ class FormClass
     private $classType;
 
     /**
-     * @var \Level
+     * @var \Belt
      *
-     * @ORM\ManyToOne(targetEntity="Level")
+     * @ORM\ManyToOne(targetEntity="Belt")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="belt_id", referencedColumnName="belt_id")
      * })

@@ -13,25 +13,33 @@ use Doctrine\ORM\Mapping as ORM;
 class Level
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="level_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\SequenceGenerator(sequenceName="level_level_id_seq", allocationSize=1, initialValue=1)
+     */
+    private $levelId;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="level", type="string", length=50, nullable=true)
      */
     private $level;
 
+
+
     /**
-     * @var \Belt
+     * Get levelId
      *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Belt")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="belt_id", referencedColumnName="belt_id")
-     * })
+     * @return integer
      */
-    private $belt;
-
-
+    public function getLevelId()
+    {
+        return $this->levelId;
+    }
 
     /**
      * Set level
@@ -55,29 +63,5 @@ class Level
     public function getLevel()
     {
         return $this->level;
-    }
-
-    /**
-     * Set belt
-     *
-     * @param \KarateBundle\Entity\Belt $belt
-     *
-     * @return Level
-     */
-    public function setBelt(\KarateBundle\Entity\Belt $belt)
-    {
-        $this->belt = $belt;
-
-        return $this;
-    }
-
-    /**
-     * Get belt
-     *
-     * @return \KarateBundle\Entity\Belt
-     */
-    public function getBelt()
-    {
-        return $this->belt;
     }
 }

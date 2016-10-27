@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * WeaponClass
  *
- * @ORM\Table(name="weapon_class", indexes={@ORM\Index(name="IDX_C0F1E9FA2EE82581F88B4253", columns={"weapons_id", "age_group"})})
+ * @ORM\Table(name="weapon_class")
  * @ORM\Entity
  */
 class WeaponClass
@@ -44,15 +44,18 @@ class WeaponClass
     private $classType;
 
     /**
-     * @var \Weapons
+     * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="Weapons")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="weapons_id", referencedColumnName="weaponds_id"),
-     *   @ORM\JoinColumn(name="age_group", referencedColumnName="age_group")
-     * })
+     * @ORM\Column(name="age_group", type="integer", nullable=true)
      */
-    private $weapons;
+    private $ageGroup;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="weapon_description", type="string", length=255, nullable=true)
+     */
+    private $weaponDescription;
 
 
 }
