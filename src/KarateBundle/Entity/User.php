@@ -61,6 +61,27 @@ class User extends BaseUser
     private $belt;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="zipcode", type="integer", nullable=true)
+     */
+    private $zipcode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="city", type="string", length=200, nullable=true)
+     */
+    private $city;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="state", type="string", length=100, nullable=true)
+     */
+    private $state;
+
+    /**
      * Set fname
      *
      * @param string $fname
@@ -202,5 +223,77 @@ class User extends BaseUser
     public function getPhoneNumber()
     {
         return $this->phoneNumber;
+    }
+
+    /**
+     * Set zipcode
+     *
+     * @param integer $zipcode
+     *
+     * @return User
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->zipcode = $zipcode;
+
+        return $this;
+    }
+
+    /**
+     * Get zipcode
+     *
+     * @return integer
+     */
+    public function getZipcode()
+    {
+        return $this->zipcode;
+    }
+
+    /**
+     * Set city
+     *
+     * @param string $city
+     *
+     * @return User
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set state
+     *
+     * @param string $state
+     *
+     * @return User
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
     }
 }

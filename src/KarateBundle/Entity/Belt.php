@@ -41,7 +41,7 @@ class Belt
      *
      * @ORM\ManyToOne(targetEntity="Level")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="level_id", referencedColumnName="level_id")
+     *   @ORM\JoinColumn(name="level_id", referencedColumnName="id")
      * })
      */
     private $level;
@@ -65,7 +65,7 @@ class Belt
      *
      * @return Belt
      */
-    public function setBeltTitle($beltTitle)
+    public function setBelt($beltTitle)
     {
         $this->beltTitle = $beltTitle;
 
@@ -77,7 +77,7 @@ class Belt
      *
      * @return string
      */
-    public function getBeltTitle()
+    public function getBelt()
     {
         return $this->beltTitle;
     }

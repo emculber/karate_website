@@ -17,9 +17,12 @@
     <p>First Name: {{ user.fname }}</p>
     <p>Last Name: {{ user.lname }}</p>
     <p>Address: {{ user.address }}</p>
+    <p>City: {{ user.city }}</p>
+    <p>State: {{ user.state }}</p>
+    <p>Zipcode: {{ user.zipcode }}</p>
     <p>Phone Number: {{ user.phoneNumber }}</p>
     <p>Date of Birth: {{ user.dateOfBirth.date|date("m/d/Y") }}</p>
-    <p>Belt: {{ user.belt.belttitle }} - {{ user.belt.beltdescription }}</p>
+    <p>Belt: {{ user.belt.belt }} - {{ user.belt.beltdescription }}</p>
 
     <a href="{{ path("fos_user_profile_edit") }}" class="btn btn-lg btn-success btn-block">Edit Profile</a>
 </div>

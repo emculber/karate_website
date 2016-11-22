@@ -44,6 +44,20 @@ class WeaponClass
     private $classType;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="start_date", type="datetime", nullable=true)
+     */
+    private $startDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="end_date", type="datetime", nullable=true)
+     */
+    private $endDate;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="age_group", type="integer", nullable=true)
@@ -53,9 +67,9 @@ class WeaponClass
     /**
      * @var string
      *
-     * @ORM\Column(name="weapon_description", type="string", length=255, nullable=true)
+     * @ORM\Column(name="weapon_desc", type="string", length=230, nullable=true)
      */
-    private $weaponDescription;
+    private $weaponDesc;
 
 
 
@@ -142,6 +156,54 @@ class WeaponClass
     }
 
     /**
+     * Set startDate
+     *
+     * @param \DateTime $startDate
+     *
+     * @return WeaponClass
+     */
+    public function setStartDate($startDate)
+    {
+        $this->startDate = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * Get startDate
+     *
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->startDate;
+    }
+
+    /**
+     * Set endDate
+     *
+     * @param \DateTime $endDate
+     *
+     * @return WeaponClass
+     */
+    public function setEndDate($endDate)
+    {
+        $this->endDate = $endDate;
+
+        return $this;
+    }
+
+    /**
+     * Get endDate
+     *
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->endDate;
+    }
+
+    /**
      * Set ageGroup
      *
      * @param integer $ageGroup
@@ -166,26 +228,26 @@ class WeaponClass
     }
 
     /**
-     * Set weaponDescription
+     * Set weaponDesc
      *
-     * @param string $weaponDescription
+     * @param string $weaponDesc
      *
      * @return WeaponClass
      */
-    public function setWeaponDescription($weaponDescription)
+    public function setWeaponDesc($weaponDesc)
     {
-        $this->weaponDescription = $weaponDescription;
+        $this->weaponDesc = $weaponDesc;
 
         return $this;
     }
 
     /**
-     * Get weaponDescription
+     * Get weaponDesc
      *
      * @return string
      */
-    public function getWeaponDescription()
+    public function getWeaponDesc()
     {
-        return $this->weaponDescription;
+        return $this->weaponDesc;
     }
 }

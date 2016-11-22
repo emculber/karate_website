@@ -15,8 +15,11 @@ class ProfileEditType extends AbstractType
         $builder->add('lname');
         $builder->add('dateOfBirth', BirthdayType::class);
         $builder->add('address');
+        $builder->add('zipcode');
+        $builder->add('city');
+        $builder->add('state');
         $builder->add('phoneNumber');
-        $builder->add('belt', EntityType::class, array('class' => 'KarateBundle:Belt', 'choice_label' => 'fullbelt'));
+        $builder->add('belt', EntityType::class, array('class' => 'KarateBundle:Belt', 'choice_label' => 'belt'));
     }
 
     public function getParent()

@@ -15,12 +15,12 @@ class Level
     /**
      * @var integer
      *
-     * @ORM\Column(name="level_id", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
-     * @ORM\SequenceGenerator(sequenceName="level_level_id_seq", allocationSize=1, initialValue=1)
+     * @ORM\SequenceGenerator(sequenceName="level_id_seq", allocationSize=1, initialValue=1)
      */
-    private $levelId;
+    private $id;
 
     /**
      * @var string
@@ -32,13 +32,13 @@ class Level
 
 
     /**
-     * Get levelId
+     * Get id
      *
      * @return integer
      */
-    public function getLevelId()
+    public function getId()
     {
-        return $this->levelId;
+        return $this->id;
     }
 
     /**

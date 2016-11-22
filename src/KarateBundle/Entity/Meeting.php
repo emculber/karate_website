@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Meeting
  *
- * @ORM\Table(name="meeting", indexes={@ORM\Index(name="IDX_F515E1398C4FC193", columns={"instructor_id"}), @ORM\Index(name="IDX_F515E139EA000B10", columns={"class_id"})})
+ * @ORM\Table(name="meeting", indexes={@ORM\Index(name="IDX_F515E1398C4FC193", columns={"instructor_id"}), @ORM\Index(name="IDX_F515E1391E5D0459", columns={"test_id"})})
  * @ORM\Entity
  */
 class Meeting
@@ -22,6 +22,13 @@ class Meeting
     private $meetingDate;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="class_id", type="integer", nullable=true)
+     */
+    private $classId;
+
+    /**
      * @var \Instructor
      *
      * @ORM\Id
@@ -34,14 +41,14 @@ class Meeting
     private $instructor;
 
     /**
-     * @var \ClassParent
+     * @var \TestClass
      *
-     * @ORM\ManyToOne(targetEntity="ClassParent")
+     * @ORM\ManyToOne(targetEntity="TestClass")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="class_id", referencedColumnName="class_id")
+     *   @ORM\JoinColumn(name="test_id", referencedColumnName="test_class_id")
      * })
      */
-    private $class;
+    private $test;
 
 
 
@@ -70,6 +77,30 @@ class Meeting
     }
 
     /**
+     * Set classId
+     *
+     * @param integer $classId
+     *
+     * @return Meeting
+     */
+    public function setClassId($classId)
+    {
+        $this->classId = $classId;
+
+        return $this;
+    }
+
+    /**
+     * Get classId
+     *
+     * @return integer
+     */
+    public function getClassId()
+    {
+        return $this->classId;
+    }
+
+    /**
      * Set instructor
      *
      * @param \KarateBundle\Entity\Instructor $instructor
@@ -94,26 +125,26 @@ class Meeting
     }
 
     /**
-     * Set class
+     * Set test
      *
-     * @param \KarateBundle\Entity\ClassParent $class
+     * @param \KarateBundle\Entity\TestClass $test
      *
      * @return Meeting
      */
-    public function setClass(\KarateBundle\Entity\ClassParent $class = null)
+    public function setTest(\KarateBundle\Entity\TestClass $test = null)
     {
-        $this->class = $class;
+        $this->test = $test;
 
         return $this;
     }
 
     /**
-     * Get class
+     * Get test
      *
-     * @return \KarateBundle\Entity\ClassParent
+     * @return \KarateBundle\Entity\TestClass
      */
-    public function getClass()
+    public function getTest()
     {
-        return $this->class;
+        return $this->test;
     }
 }

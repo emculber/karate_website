@@ -44,6 +44,20 @@ class WeaponClass
     private $classType;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="start_date", type="datetime", nullable=true)
+     */
+    private $startDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="end_date", type="datetime", nullable=true)
+     */
+    private $endDate;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="age_group", type="integer", nullable=true)
@@ -53,9 +67,9 @@ class WeaponClass
     /**
      * @var string
      *
-     * @ORM\Column(name="weapon_description", type="string", length=255, nullable=true)
+     * @ORM\Column(name="weapon_desc", type="string", length=230, nullable=true)
      */
-    private $weaponDescription;
+    private $weaponDesc;
 
 
 }

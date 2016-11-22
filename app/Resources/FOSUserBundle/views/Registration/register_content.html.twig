@@ -44,6 +44,15 @@
         {{ form_widget(form.address, { 'attr': {'class': 'form-control', 'placeholder': 'Address' } }) }}
         {{ form_errors(form.address) }}
 
+        {{ form_widget(form.city, { 'attr': {'class': 'form-control', 'placeholder': 'City' } }) }}
+        {{ form_errors(form.city) }}
+
+        {{ form_widget(form.state, { 'attr': {'class': 'form-control', 'placeholder': 'State' } }) }}
+        {{ form_errors(form.state) }}
+
+        {{ form_widget(form.zipcode, { 'attr': {'class': 'form-control', 'placeholder': 'Zipcode' } }) }}
+        {{ form_errors(form.zipcode) }}
+
         {{ form_widget(form.phoneNumber, { 'attr': {'class': 'form-control', 'placeholder': 'Phone Number' } }) }}
         {{ form_errors(form.phoneNumber) }}
 

@@ -61,6 +61,27 @@ class User extends BaseUser
     private $belt;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="zipcode", type="integer", nullable=true)
+     */
+    private $zipcode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="city", type="string", length=200, nullable=true)
+     */
+    private $city;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="state", type="string", length=100, nullable=true)
+     */
+    private $state;
+
+    /**
      * Set fname
      *
      * @param string $fname
