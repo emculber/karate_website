@@ -43,7 +43,7 @@ class DefaultController extends Controller
                 array_push($form_classes[$current_id]['meeting'], array(
                     'instructor_fname' => $class['fname'],
                     'instructor_lname' => $class['lname'],
-                    'instructor_meeting' => $class['meeting_date'],
+                    'instructor_meeting' => date('l', strtotime($class['meeting_date'])) . " at " . date("H:i:s",strtotime($class['meeting_date'])),
                 ));
             }else{
                 $form_classes[$current_id]['test_instructor_fname'] = $class['fname'];
